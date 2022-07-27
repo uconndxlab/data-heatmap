@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Connecticut's NSF Grants</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+
+
+<link rel='stylesheet' id='banner-css'  href='https://brand.uconn.edu/wp-content/themes/lobo-v2/vendor/uconn/banner/_site/banner.css?ver=5.9.3' type='text/css' media='all' />
+
+
+  <!-- Add CSS -->
+  <link rel="stylesheet" href="css/index.css">
+   <!-- UConn Banner -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/uconn/banner@2.0.0/banner.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XB2W7W9ZV5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XB2W7W9ZV5');
+</script>
+</head>
+
+<body>
+  <script type='text/javascript' src='https://scripts-universityofconn.netdna-ssl.com/cookie-notification.js'></script> <noscript> <p>Our websites may use cookies to personalize and enhance your experience. By continuing without changing your cookie settings, you agree to this collection. For more information, please see our <a href="https://privacy.uconn.edu/university-website-notice/" target="_blank">University Websites Privacy Notice</a>.</p> </noscript>
+  <div id="app">
+    <div id="uconn-banner">
+
+        <div id="uconn-header-container">
+    
+          <div class="row-container">
+            <div class="row-fluid">
+              <div id="home-link-container">
+                <a id="home-link" href="https://uconn.edu/">
+                  <span id="wordmark" aria-hidden="true">UConn</span>
+                  <span id="university-of-connecticut" style="text-transform: uppercase;">
+                    University of Connecticut
+                  </span>
+                </a>
+              </div>
+
+              <div id="button-container">
+                        <div class="icon-container" id="icon-container-search">
+                            <a class="btn" id="uconn-search" href="https://uconn.edu/search">
+                                <span class="no-css">Search University of Connecticut</span>
+                                
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" aria-hidden="true"
+                                    class="banner-icon">
+                                    <title>Search UConn</title>
+                                    <path
+                                        d="M28.072 24.749l-6.046-6.046c0.912-1.499 1.437-3.256 1.437-5.139 0-5.466-4.738-10.203-10.205-10.203-5.466 0-9.898 4.432-9.898 9.898 0 5.467 4.736 10.205 10.203 10.205 1.818 0 3.52-0.493 4.984-1.349l6.078 6.080c0.597 0.595 1.56 0.595 2.154 0l1.509-1.507c0.594-0.595 0.378-1.344-0.216-1.938zM6.406 13.258c0-3.784 3.067-6.853 6.851-6.853 3.786 0 7.158 3.373 7.158 7.158s-3.067 6.853-6.853 6.853-7.157-3.373-7.157-7.158z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <!-- Content provided by css -->
+                            <div id="uconn-search-tooltip"></div>
+                        </div>
+                        <div class="icon-container" id="icon-container-az">
+                            
+                            <a class="btn" id="uconn-az" href="https://uconn.edu/az">
+                                <span class="no-css">A to Z Index</span>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" aria-hidden="true"
+                                    class="banner-icon">
+                                    <title>UConn A to Z Search</title>
+                                    <path
+                                        d="M5.345 8.989h3.304l4.944 13.974h-3.167l-0.923-2.873h-5.147l-0.946 2.873h-3.055l4.989-13.974zM5.152 17.682h3.579l-1.764-5.499-1.815 5.499zM13.966 14.696h5.288v2.56h-5.288v-2.56zM20.848 20.496l7.147-9.032h-6.967v-2.474h10.597v2.341l-7.244 9.165h7.262v2.466h-10.798v-2.466h0.004z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <!-- Content provided by css -->
+                            <div id="uconn-az-tooltip"></div>
+                        </div>
+                    </div>
+    
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <nav class="upper-nav">
+        <div class="">
+          <a class="parent-title" href="https://core.uconn.edu/news">Center For Open Research Resources and Equipment</a>
+        </div>
+    
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light shift">
+        <div class="">
+          <a class="navbar-brand" href="index.html">Connecticut's NSF Grants</a>
+        </div>
+    
+     </nav>
+  
+
+    <v-app>
+        
+      <v-main>
+        <!-- <v-app-bar color="#182A60" dark app prominent>
+          <v-container fluid class="header-container">
+
+
+            
+            <v-row style="margin-top:5px">
+
+              <v-col style="padding-top:25px;">
+                <v-toolbar-title>Connecticut's NSF Grants</v-toolbar-title>
+
+            </v-col>
+
+            <v-col
+                
+            >
+            <v-select
+                    v-model="current_type"
+                    :items="ins_types"
+                    @change="filterResultsByCurrentState()"
+                    
+                    chips
+                    label="Institution Type"
+                    dense
+            ></v-select>
+            </v-col>
+
+              <v-col >
+                <v-select :items="years"  chips label="Year" v-model="current_year" @change="filterResultsByCurrentState()" dense>
+                </v-select>               
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-app-bar> -->
+
+        <v-container fluid>
+          <v-row class="d-block d-md-flex">
+            <v-col cols="12"  md="3">
+
+              <v-expansion-panels multiple accordion :value="panel">
+                <v-expansion-panel :key="0">
+                  <v-expansion-panel-header>
+                    Filters
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    <v-select
+                            v-model="current_type"
+                            :items="ins_types"
+                            @change="filterResultsByCurrentState()"
+                            height=50
+                            chips
+                            dense
+                            label="Institution Type"
+                    ></v-select>
+                    
+                    <v-select :items="years" chips label="Year"  height=50 dense
+                    v-model="current_year" @change="filterResultsByCurrentState()">
+                    </v-select>               
+                          
+                    <v-list id="result-list">
+                        <v-list-item-group>
+                          <v-list-item v-for="ins in activeResults" :key="ins.Institution_Name" @click="doActivate(ins)">
+                            
+                            <v-list-item-icon v-if="ins.type == 'Business'">
+                                <span class="marker-orange"></span>                            
+                            </v-list-item-icon>
+                            <v-list-item-icon v-if="ins.type == 'Higher Ed Institution'">
+                                <span class="marker-blue"></span>                            
+                            </v-list-item-icon>                            
+                            <v-list-item-content>
+                              <v-list-item-title>{{ins.Institution_Name}}</v-list-item-title>
+                              <span v-if="current_year !== 'All'"><strong>{{current_year}}: </strong>{{ins['Award_Amount_' + current_year] | toUSD}} </span>
+                              <span v-if="current_year == 'All'"><strong>Total Awards (2011-2022) </strong>{{ins['total_award'] | toUSD}} </span>
+
+                              <span v-if="current_year !== 'All'"><strong>{{current_year}} Jobs: </strong>{{ins['jobs_' + current_year]}} </span>
+                              <span v-if="current_year == 'All'"><strong> Total Jobs (2011-2022) </strong>{{ins['total_jobs']}} </span>
+
+                            </v-list-item-content>
+                          </v-list-item>
+                        </v-list-item-group>
+                      </v-list>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+
+                <v-expansion-panel :key="1">
+                  <v-expansion-panel-header>
+                    What am I looking at?
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content id="result-description" >
+                  <h4> CT NSF Grants</h4>
+                  <p>While federal, state, and corporate research grants support researchers at an institution, 
+                    they also play an important role in supporting local economies in a manner that sometimes can get overlooked. </p>
+                    <p>Here we are showing a visualization of all NSF grants obtained by businesses and higher education institutions within the State of Connecticut between the 2011 and 2022 fiscal years distributed by municipality. 
+                    Circle sizes are proportional to the dollar value of grants obtained. 
+                    Feel free to explore the visualization by adjusting filters or just panning and zooming on the map. 
+                    If you have questions feel free to reach out to us!
+                    </p>
+      
+                    <h4> Jobs Data</h4>
+                    <p>The operational expenditures of businesses and institutions receiving NSF grants have both direct and indirect economic effects on jobs within the state of Connecticut. 
+                    The direct effects are the jobs that are supported as a result of the initial injections of spending into the state economy. </p>
+                    <p>These consist of total personnel costs and other contractual or commodity expenses. 
+                    This spending generates two spillover effects: indirect and induced. Indirect effects include jobs supported as a result of local businesses spending on goods and services purchased by institutions receiving NSF grants; these businesses use payments from NSF grant awardees for supplies, employee salaries, and so on, creating a cycle of spending that impacts the state economy. 
+                    Induced effects include additional jobs supported as a result of household spending generated by business activities that are directly or indirectly supported by the NSF grant. 
+                    The total number of jobs is therefore the combination of direct, indirect and induced effects. </p>
+                  </v-expansion-panel-content>
+                  </v-expansion-panel>                
+              </v-expansion-panels>
+
+
+
+
+
+
+
+            </v-col>
+            <v-col cols="12" md="9">
+
+              <div id="mapView"></div>
+              <!-- <v-btn
+              color="primary"
+              dark
+              absolute
+              top
+              right
+              fab
+              @click = "showInfoPane = true;"
+            >
+              <v-icon>mdi-information</v-icon>
+            </v-btn> -->
+            </v-col>
+          </v-row>
+        </v-container>
+
+
+      <v-dialog
+        v-model="showInfoPane"
+        scrollable
+        max-width="600px"
+      >
+      <v-card>
+          <v-card-title>Connecticut NSF Grants</v-card-title>
+          <v-divider></v-divider>
+          <v-card-text style="padding-top:20px; height: 300px;">
+            <p>While federal, state, and corporate research grants support researchers at an institution, 
+              they also play an important role in supporting local economies in a manner that sometimes can get overlooked. </p>
+              <p>Here we are showing a visualization of all NSF grants obtained by businesses and higher education institutions within the State of Connecticut between the 2017 and 2022 fiscal years distributed by municipality. 
+              Circle sizes are proportional to the dollar value of grants obtained. 
+              Feel free to explore the visualization by adjusting filters or just panning and zooming on the map. 
+              If you have questions feel free to reach out to us!
+              </p>
+
+              <h4> Jobs Data</h4>
+              <p>The operational expenditures of businesses and institutions receiving NSF grants have both direct and indirect economic effects on jobs within the state of Connecticut. 
+              The direct effects are the jobs that are supported as a result of the initial injections of spending into the state economy. </p>
+              <p>These consist of total personnel costs and other contractual or commodity expenses. 
+              This spending generates two spillover effects: indirect and induced. Indirect effects include jobs supported as a result of local businesses spending on goods and services purchased by institutions receiving NSF grants; these businesses use payments from NSF grant awardees for supplies, employee salaries, and so on, creating a cycle of spending that impacts the state economy. 
+              Induced effects include additional jobs supported as a result of household spending generated by business activities that are directly or indirectly supported by the NSF grant. 
+              The total number of jobs is therefore the combination of direct, indirect and induced effects. </p>
+
+
+          </v-card-text>
+          </v-card>
+  </v-dialog>
+
+
+
+<v-dialog
+      v-model="showActiveInst"
+      scrollable
+      max-width="600px"
+    >
+    <v-card>
+        <v-card-title>{{activeInst.Institution_Name}}</v-card-title>
+        <v-divider></v-divider>
+        <v-card-text style="height: 300px;">
+            <v-simple-table
+            >
+                <template v-slot:default>
+            <thead>
+                <tr>
+                  <th class="text-left">
+                    Year
+                  </th>
+                  <th class="text-left">
+                    Award
+                  </th>
+
+                  <th class="text-left">
+                    # Jobs
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <td><strong>Total</strong></td>
+                  <td><strong>{{activeInst.total_award  | toUSD }}</strong></td>
+                  <td><strong>{{activeInst.total_jobs }}</strong></td>                
+
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>{{activeInst.Award_Amount_2022 | toUSD}}</td>
+                    <td>{{activeInst.jobs_2022 }}</td>  
+                </tr>
+                <tr>
+                  <td>2021</td>
+                  <td>{{activeInst.Award_Amount_2021 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2021 }}</td>  
+                </tr>
+                <tr>
+                  <td>2020</td>
+                  <td>{{activeInst.Award_Amount_2020 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2020 }}</td>  
+                </tr>
+                <tr>
+                  <td>2019</td>
+                  <td>{{activeInst.Award_Amount_2019 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2019 }}</td>  
+                </tr>
+                <tr>
+                  <td>2018</td>
+                  <td>{{activeInst.Award_Amount_2018 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2018 }}</td>  
+                </tr>
+                <tr>
+                  <td>2017</td>
+                  <td>{{activeInst.Award_Amount_2017 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2017 }}</td>  
+                </tr>
+                <tr>
+                  <td>2016</td>
+                  <td>{{activeInst.Award_Amount_2016 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2016 }}</td>  
+                </tr>
+                <tr>
+                  <td>2015</td>
+                  <td>{{activeInst.Award_Amount_2015 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2015 }}</td>  
+                </tr>
+                <tr>
+                  <td>2014</td>
+                  <td>{{activeInst.Award_Amount_2014 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2014 }}</td>  
+                </tr>
+                <tr>
+                  <td>2013</td>
+                  <td>{{activeInst.Award_Amount_2013 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2013 }}</td>  
+                </tr>
+                <tr>
+                  <td>2012</td>
+                  <td>{{activeInst.Award_Amount_2012 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2012 }}</td>  
+                </tr>
+                <tr>
+                  <td>2011</td>
+                  <td>{{activeInst.Award_Amount_2011 | toUSD}}</td>
+                  <td>{{activeInst.jobs_2011 }}</td>  
+                </tr>
+
+              </tbody>
+            </template>
+          </v-simple-table>
+        </v-card-text>
+        </v-card>
+</v-dialog>
+
+
+
+      </v-main>
+      <v-footer
+      fixed
+      padless
+      id="footer"
+    >
+      <v-card
+        flat
+        tile
+        width="100%"
+      >
+
+
+
+        <v-card-text>
+            <v-row>
+            <v-col>
+              <a class="footer-link" href="https://uconn.edu/">&copy; University of Connecticut</a>
+              <a class="footer-link" href="https://uconn.edu/disclaimers-privacy-copyright/">Disclaimers, Privacy &amp; Copyright</a>
+              <a class="footer-link" href="https://accessibility.uconn.edu/">Accessibility</a>
+            </v-col>
+           
+            <v-col>
+              <img style="width:24px; position: relative; bottom:-5px;" src="img/dx.png"> Developed by the <a href="https://dxgroup.core.uconn.edu">UConn Digital Experience Group</a> | <a href="https://core.uconn.edu">Center for Open Research Resources & Equipment </a>
+            </v-col>
+            </v-row>
+
+        </v-card-text>
+      </v-card>
+    </v-footer>
+      
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: () => ({
+        map: "",
+        jobs_max: 350,
+        max_award_amount: 40000000,
+        panel:[1],
+        current_year: 'All',
+        cities: [],
+        current_type: "All",
+        highEd: [],
+        shownCityMarkers: [],
+        shownHighEdMarkers: [],
+        shownMarkers: [],
+        resultsTab: 0,
+        activeInst: {},
+        showActiveInst:false,
+        showInfoPane:false,
+        ins_types: [
+          "All",
+          "Business",
+          "Higher Ed Institution"
+        ],
+
+
+        combinedResults:[]
+      }),
+      computed:{
+        activeResults() {
+            var arr = this.combinedResults.filter(i => i.active == true);
+            
+            var sorted = arr.sort((a, b) => (a.total_award < b.total_award) ? 1 : -1)
+
+
+            // inst_year_award =  inst_year_award.replace(/,/g, '');
+            // inst_year_award = parseInt(inst_year_award);
+
+
+
+            if(this.current_year !== "All")
+                var sorted = arr.sort((a, b) => (parseInt(a['Award_Amount_' +this.current_year]) < parseInt(b['Award_Amount_'+this.current_year])) ? 1 : -1)
+
+
+            return arr;
+
+        },
+
+        years() {
+          let arr = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022].sort().reverse();
+              
+          arr.unshift('All'); 
+          
+          return arr;
+        }
+      },
+      mounted() {
+        mapboxgl.accessToken =
+          'pk.eyJ1Ijoiam9lbHVjb25uIiwiYSI6ImNrc3VtNDBndTFod3MybnFrbDRxN2EybHYifQ.2_iHqtCV_x6T78U4JD293g';
+        const map = new mapboxgl.Map({
+          container: 'mapView',
+          style: 'mapbox://styles/mapbox/streets-v11',
+          center: [-72.7, 41.45],
+          zoom: 8.5
+        });
+        var mq = window.matchMedia("(min-width:1200px)");
+        if (mq.matches){
+          map.setZoom(8.5)
+        }
+        else{
+          map.setZoom(7.5)
+        }
+
+        this.map = map;
+
+        this.getCities();
+        this.getHighEd();
+
+      },
+
+      filters: {
+        toUSD (value) {
+        return `$${value.toLocaleString()}`
+        }
+    },
+
+      methods: {
+        getCities() {
+          let that = this;
+          fetch('cities.json')
+            .then(response => response.json())
+            .then(function (data) {
+
+              data.forEach(function (ins) {
+                ins.total_award = 0;
+                ins.total_jobs = 0;
+                ins.type="Business";
+                ins.active= true;
+                that.combinedResults.push(ins);
+                that.cities.push(ins);
+                console.log("this institution..." + ins.Institution_Name);
+                
+                that.years.forEach(function(year){
+                    if (year !== "All") {
+                        var year = year.toString();
+                        var inst_year_award = ins['Award_Amount_' + year]
+                        var inst_year_jobs = ins['jobs_' + year];
+
+                        if(inst_year_award != "-") {
+                            inst_year_award =  inst_year_award.replace(/,/g, '');
+                            inst_year_award = parseInt(inst_year_award);
+                            ins['Award_Amount_' + year] = inst_year_award;
+
+                            console.log("this year..." + year + "..." + inst_year_award);
+
+                            ins.total_award += parseInt(inst_year_award);
+                            console.log("...and a total of .... " +ins.total_award);
+                        } else {
+                            ins['Award_Amount_' + year] = 0;
+                        }
+
+
+                        if(inst_year_jobs != "-") {
+                            
+                            inst_year_jobs = parseInt(inst_year_jobs);
+
+                            ins.total_jobs += parseInt(inst_year_jobs);
+                        } else {
+                            ins['jobs_' + year] = 0;
+                        }
+                    }
+
+                })
+
+                
+
+              })
+              that.placeMarkers()
+            })
+
+
+
+        },
+
+        getHighEd() {
+          let that = this;
+          fetch('high-ed.json')
+            .then(response => response.json())
+            .then(function (data) {
+              data.forEach(function (ins) {
+                ins.total_award = 0;
+                ins.total_jobs = 0;
+                ins.type = "Higher Ed Institution";
+                ins.active= true;
+                that.combinedResults.push(ins);
+                that.highEd.push(ins);
+
+                console.log("this institution..." + ins.Institution_Name);
+                
+                that.years.forEach(function(year){
+                    if (year !== "All") {
+                        var year = year.toString();
+                        var inst_year_award = ins['Award_Amount_' + year]
+                        var inst_year_jobs = ins['jobs_' + year];
+
+                        if(inst_year_award != "-") {
+                            inst_year_award =  inst_year_award.replace(/,/g, '');
+                            inst_year_award = parseInt(inst_year_award);
+                            ins['Award_Amount_' + year] = inst_year_award;
+
+                            console.log("this year..." + year + "..." + inst_year_award);
+
+                            ins.total_award += parseInt(inst_year_award);
+                            console.log("...and a total of .... " +ins.total_award);
+                        } else {
+                            ins['Award_Amount_' + year] = 0;
+                        }
+
+
+                        if(inst_year_jobs != "-") {
+                            
+                            inst_year_jobs = parseInt(inst_year_jobs);
+
+                            ins.total_jobs += parseInt(inst_year_jobs);
+                        } else {
+                            ins['jobs_' + year] = 0;
+                        }
+                    }
+
+                })
+
+
+
+              })
+              that.placeMarkers()
+            })
+        },
+
+        filterResultsByCurrentState() {
+            var type = this.current_type;
+            var year = this.current_year;
+
+            
+            this.combinedResults.forEach(function(item){
+                var award_year_amount = item['Award_Amount_'+year];
+                
+                if ((item.type == type) && (award_year_amount != "-")) {
+                    item.active = true;
+                } else {
+                    item.active = false;
+                }
+
+                if((type=="All") && (award_year_amount != "-")){
+                    item.active = true;
+                }
+
+            });
+
+            console.log(this.activeResults);
+            this.placeMarkers();
+        },
+
+        // filterResultsByYear() {
+        //     var year = this.current_year;
+        //     console.log("filter results by year");
+        //     console.log(year);
+
+        //     this.combinedResults.forEach(function(item){
+        //         if(item['Award_Amount_'+year] != "-") {
+        //             item.active = true
+        //         } else {
+        //             item.active = false;
+        //     });
+        //     this.placeMarkers();
+        // },
+
+        calculateMarkerDiameter(val) {
+            let max = this.max_award_amount;
+            let percentage = val/max;
+                percentage = percentage*100
+
+            if(percentage  < 15)
+                return 15;
+            if (percentage > 50) {
+                return 70;
+            }
+            else return percentage;
+
+        },
+
+        calculateMarkerOpacity(val) {
+            let max = this.jobs_max;
+            let percentage = val/max;
+                percentage = percentage*100
+
+            if(percentage+50  < 60){
+                return 60;
+            }
+            if (percentage+50 > 100) {
+                return 100;
+            }
+            else return percentage+50;
+
+        },
+
+        placeMarkers() {
+          this.clearMarkers();
+          var that = this;
+          var data = that.activeResults;
+          for (var i = 0; i < data.length; i++) {
+            let inst = data[i];
+
+
+            var el = document.createElement('div');
+            el.classList.add('marker');
+
+            el.setAttribute('title', inst.Institution_Name);
+
+            if(that.current_year == "All") {
+                let width = this.calculateMarkerDiameter(inst.total_award);
+                let opacity = this.calculateMarkerOpacity(inst.total_jobs);
+                el.style.width = `${width}px`;
+                el.style.height = `${width}px`;
+                el.style.opacity = `${opacity}%`;
+            } else {
+                let width = this.calculateMarkerDiameter(inst['Award_Amount_'+that.current_year]);
+                let opacity = this.calculateMarkerOpacity(inst.total_jobs);
+                el.style.width = `${width}px`;
+                el.style.height = `${width}px`;
+                el.style.opacity = `${opacity}%`;
+            }
+
+
+            switch (inst.type) {
+                case 'Higher Ed Institution':
+                    el.classList.add ("marker-blue");
+                    el.classList.add ("marker-high-ed");
+                break;
+
+                default:
+                    el.classList.add ("marker-orange");
+                    el.classList.add ("marker-high-city");
+                break;
+            }
+
+            el.addEventListener('click', function(){that.doActivate(inst)});
+            
+            
+            // that.years.forEach(function(yr){
+            //         var year = yr.toString();
+            //         var inst_year_award = inst['Award_Amount_' + year]
+            //         var inst_year_jobs = inst['jobs_' + year];
+                 
+            //         if ( inst_year_award !== "-") {
+            //             var key = 'award-amount-'+ year;
+            //             el.setAttribute('data-' + key, inst_year_award);
+
+
+            //             console.log("Dollars that year " + inst_year_award);
+
+            //             var diameter = parseFloat(parseInt(inst_year_award) / parseInt(that.max_award_amount)) ;
+            //             //console.log("diameter: " +  diameter);
+
+
+
+            //         }
+
+            //         if ( inst_year_jobs !== "-") {
+            //             var key = 'jobs-'+ year;
+            //             el.setAttribute('data-' + key, inst_year_jobs);
+            //         }
+            // });
+
+
+
+                var mrk = new mapboxgl.Marker(el)
+                .setLngLat([inst.x, inst.y])
+                .addTo(that.map);
+
+                this.shownMarkers.push(mrk);
+
+
+            }
+        },
+
+        doActivate(inst){
+            console.log(inst.Institution_Name);
+            this.showActiveInst = true;
+
+            this.activeInst = inst;
+        },
+
+        placeHighEdMarkers() {
+          var that = this;
+          var data = this.highEd;
+          for (var i = 0; i < data.length; i++) {
+            var inst = data[i];
+
+
+            var el = document.createElement('div');
+            el.classList.add('marker');
+            el.classList.add ("marker-blue");
+            el.classList.add ("marker-high-ed");
+            
+            that.years.forEach(function(yr){
+                    var year = yr.toString();
+                    var inst_year_award = inst['Award_Amount_' + year]
+                    var inst_year_jobs = inst['jobs_' + year];
+                 
+                    if ( inst_year_award !== "-") {
+                        var key = 'award-amount-'+ year;
+                        el.setAttribute('data-' + key, inst_year_award);
+                    }
+
+                    if ( inst_year_jobs !== "-") {
+                        var key = 'jobs-'+ year;
+                        el.setAttribute('data-' + key, inst_year_jobs);
+                    }
+            });
+
+
+
+
+
+
+
+
+
+
+
+            var mrk = new mapboxgl.Marker(el)
+              .setLngLat([inst.x, inst.y])
+              .addTo(that.map);
+
+            this.shownHighEdMarkers.push(mrk);
+          }
+        },
+
+        placeCityMarkers() {
+          var that = this;
+          var data = this.cities;
+          for (var i = 0; i < data.length; i++) {
+            var inst = data[i];
+
+            var el = document.createElement('div');
+            el.classList.add('marker');
+            el.classList.add("marker-orange");
+            el.classList.add("marker-city");
+
+            that.years.forEach(function(yr){
+                    var year = yr.toString();
+                    var inst_year_award = inst['Award_Amount_' + year]
+                    var inst_year_jobs = inst['jobs_' + year];
+                 
+                    if ( inst_year_award !== "-") {
+                        var key = 'award-amount-'+ year;
+                        el.setAttribute('data-' + key, inst_year_award);
+                    }
+
+                    if ( inst_year_jobs !== "-") {
+                        var key = 'jobs-'+ year;
+                        el.setAttribute('data-' + key, inst_year_jobs);
+                    }
+            });
+
+            var mrk = new mapboxgl.Marker(el)
+              .setLngLat([inst.x, inst.y])
+              .addTo(that.map);
+
+            this.shownCityMarkers.push(mrk);
+          }
+
+        },
+
+        emphasize(selector) {
+          var items = document.querySelectorAll(selector);
+          items.forEach(function (item) {
+            item.classList.remove('hidden');
+          })
+        },
+
+        hide(selector){
+            var items = document.querySelectorAll(selector);
+            items.forEach(function (item) {
+                item.classList.add('hidden');
+            })
+        },
+
+        show(selector) {
+            var items = document.querySelectorAll(selector);
+            items.forEach(function (item) {
+                item.classList.remove('hidden');
+            })
+        },
+
+        deEmphasize(selector) {
+          var items = document.querySelectorAll(selector);
+          items.forEach(function (item) {
+            item.classList.remove('emphasized');
+            item.classList.add('hidden');
+          })
+        },
+
+        clearMarkers() {
+
+            var markers = this.shownMarkers;
+            markers.forEach(function (marker) {
+                marker.remove();
+            })
+
+        },
+
+        clearCityMarkers() {
+
+          var markers = this.shownCityMarkers;
+          markers.forEach(function (marker) {
+            marker.remove();
+          })
+
+        },
+
+        clearHighEdMarkers() {
+          var markers = this.shownHighEdMarkers;
+          markers.forEach(function (marker) {
+            marker.remove();
+          })
+        },
+
+        placeMarkersAgain() {
+        //   this.placeCityMarkers();
+        //   this.placeHighEdMarkers();
+        },
+
+        changeYear() {
+
+            this.filterResultsOnKey('')
+
+            // let that = this;
+            // this.placeMarkersAgain();
+            // var markers = document.querySelectorAll('.marker');                
+
+            // markers.forEach(function(marker){
+            //     if(that.current_year !== "All") {
+            //         marker.classList.add('hidden');
+            //         var key = marker.dataset["awardAmount-" + that.current_year]
+                    
+            //         if(key != undefined) {
+            //             marker.classList.remove('hidden');
+            //         }
+            //     } else {
+            //         marker.classList.remove('hidden');
+            //     }
+                
+            // });
+        },
+
+        changeInst_Type() {
+          switch (this.inst_type) {
+            case "Higher Ed Institution":
+              this.hide('.marker-city');
+              this.show('.marker-high-ed')
+              break;
+
+            case "City":
+                this.hide('.marker-high-ed');
+                this.show('.marker-city')
+              break;
+          }
+        }
+      }
+    })
+
+  </script>
+
+
+</body>
+
+</html>
